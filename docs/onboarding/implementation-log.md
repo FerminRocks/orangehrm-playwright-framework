@@ -1,9 +1,9 @@
 # Implementation Log
 
 ## Project Timeline
-- **Start Date**: 2026-05-22
-- **Current Phase**: Phase 3 - OpenCode Operating Layer
-- **Status**: In Progress
+**Start Date**: 2026-05-28
+**Current Phase**: Phase 4 - Discovery
+**Status**: In Progress
 
 ## Completed Milestones
 
@@ -28,12 +28,11 @@
 - **Completed**: Feature branch workflow established
 - **Outcome**: Remote repository synchronized; team collaboration ready
 
-### Phase 3: OpenCode Operating Layer (Current)
-- **In Progress**: Onboarding documentation for team members
-- **In Progress**: Model selection guide for cost-effective AI assistance
-- **In Progress**: UI discovery template and subagents for controlled exploration
-- **Planned**: Specialized agents for product analysis and UI exploration
-- **Planned**: Reusable skill for documenting discovered flows
+### Phase 3: OpenCode Operating Layer (Completed)
+- **Completed**: Onboarding documentation for team members
+- **Completed**: Model selection guide for cost-effective AI assistance
+- **Completed**: UI discovery template and subagents for controlled exploration
+- **Completed**: Product-analyst subagent, ui-explorer subagent, and explore-ui-flow skill implemented and merged
 
 ## Notable Lessons Learned
 
@@ -72,20 +71,21 @@
 
 | Date | Phase | Activity | Result | Lesson Learned |
 |------|-------|----------|--------|-----------------|
-| 2026-05-22 | 1 | Playwright & TypeScript setup | Working project initialized | Foundation solid for all phases |
-| 2026-05-22 | 1 | Git initialization and branch rename | Main branch established | Git workflow ready from start |
-| 2026-05-22 | 1 | OpenCode installation and MCP setup | Playwright MCP configured | Manual MCP correction required |
-| 2026-05-22 | 2 | Create governance and strategy docs | AGENTS.md, test-strategy.md created | Documentation first approach effective |
-| 2026-05-22 | 2 | Product overview and credentials | product-overview.md with public credentials | Public demo data documented safely |
-| 2026-05-22 | 2 | Jira templates | Bug and user story templates created | Templates enable consistent reporting |
-| 2026-05-22 | 2 | GitHub publication | Repository pushed; PR workflow enabled | Remote collaboration ready |
-| 2026-05-22 | 3 | Getting started documentation | Onboarding guide completed | Team can follow structured setup |
-| 2026-05-22 | 3 | Implementation log creation | This document | Lessons preserved for future reference |
-| 2026-05-22 | 3 | Model selection guide | Guidelines established | Cost-aware AI assistance planning |
+| 2026-05-28 | 1 | Playwright & TypeScript setup | Working project initialized | Foundation solid for all phases |
+| 2026-05-28 | 1 | Git initialization and branch rename | Main branch established | Git workflow ready from start |
+| 2026-05-28 | 1 | OpenCode installation and MCP setup | Playwright MCP configured | Manual MCP correction required |
+| 2026-05-28 | 2 | Create governance and strategy docs | AGENTS.md, test-strategy.md created | Documentation first approach effective |
+| 2026-05-28 | 2 | Product overview and credentials | product-overview.md with public credentials | Public demo data documented safely |
+| 2026-05-28 | 2 | Jira templates | Bug and user story templates created | Templates enable consistent reporting |
+| 2026-05-28 | 2 | GitHub publication | Repository pushed; PR workflow enabled | Remote collaboration ready |
+| 2026-05-28 | 3 | Getting started documentation | Onboarding guide completed | Team can follow structured setup |
+| 2026-05-28 | 3 | Implementation log creation | This document | Lessons preserved for future reference |
+| 2026-05-28 | 3 | Model selection guide | Guidelines established | Cost-aware AI assistance planning |
+| 2026-05-28 | 4 | Login Flow Discovery (controlled) | `ui-explorer` + `explore-ui-flow` used with Playwright MCP; Dashboard reached | Audit found unauthorized root-level screenshots and unverified label-based locators; screenshots removed and locators corrected to placeholder/role-based recommendations; lesson: audit discovery outputs before commit; skill must control evidence generation and locator verification |
 
 ## Next Steps
-- Complete Phase 3 OpenCode layer (product-analyst and ui-explorer subagents, explore-ui-flow skill)
-- Begin Phase 4: Controlled UI exploration and discovery documentation
+- Phase 4 (In Progress): Controlled UI exploration and discovery documentation
+  - Login Flow discovery: documented, audited, and pending PR together with skill governance improvements and this implementation-log update
 - Establish test data and discovery documentation patterns
 - Design Page Object Model and API client structure
-- Implement first test suite (smoke tests)
+- Next planned activity after this PR: design and implement the first automated Login test based on the approved discovery document
