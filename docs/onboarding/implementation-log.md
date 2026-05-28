@@ -89,3 +89,5 @@
 - Establish test data and discovery documentation patterns
 - Design Page Object Model and API client structure
 - Next planned activity after this PR: design and implement the first automated Login test based on the approved discovery document
+
+| 2026-05-28 | 5 | Login automation technical assessment and planning | Minimal vertical-slice structure approved; implementation deferred until coding/review agents exist | Lesson: separate framework code (src/) from tests; keep Page Objects in src/ not tests/ |
