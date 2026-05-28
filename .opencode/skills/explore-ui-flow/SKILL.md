@@ -56,9 +56,9 @@ Before using this skill, read and understand:
 
 ### 2. Navigate with Playwright MCP
 - Use Playwright MCP to navigate the flow step-by-step
-- Take snapshots at each major state transition
-- Record the URL and visible page elements at each step
-- Note any modals, dialogs, or overlays that appear
+ - Take snapshots at each major state transition only when the task explicitly authorizes saving artifacts and defines their destination path.
+ - Record the URL and visible page elements at each step
+ - Note any modals, dialogs, or overlays that appear
 
 ### 3. Capture Page and State Transitions
 - Document the navigation sequence
@@ -75,10 +75,12 @@ Before using this skill, read and understand:
   3. `getByText()` for buttons/links with stable text
   4. CSS selector as fallback
   5. XPath only if absolutely necessary
-- For each suggested locator, test it mentally or by inspection:
-  - Is it stable across browser reloads?
-  - Does it depend on dynamic content?
-  - Is it business-visible (accessible name)?
+ - For each suggested locator, verify it against the live page using Playwright MCP before documenting it as a stable recommendation (see Locator Verification rule below).
+ - For candidate locators that are inferred (not verified), mark them explicitly as "candidate" until validated.
+ - For verification, consider:
+   - Is it stable across browser reloads?
+   - Does it depend on dynamic content?
+   - Is it business-visible (accessible name)?
 
 ### 5. Record Possible Validations and Assertions
 - For each action, identify what should be asserted:
@@ -94,6 +96,7 @@ Before using this skill, read and understand:
   - Request body (if applicable)
   - Response status and structure
   - Any error responses
+ - Only document sanitized network call information (method, endpoint path, response status). Do not record or store authorization tokens, cookies, session identifiers, or sensitive headers.
 
 ### 7. Document Assumptions and Risks
 - Identify and record:
@@ -108,6 +111,19 @@ Before using this skill, read and understand:
 - Use the format defined in `docs/discovery/ui-flow-template.md`
 - Fill in all sections with findings from steps 1-7
 - Save to `docs/discovery/[flow-name].md`
+ 
+## Evidence and Output Control (NEW)
+
+- The skill may create or update only the documentation file explicitly authorized in the task description.
+- The skill must NOT save screenshots, traces, videos, downloads, HAR files, or any browser artifact unless the task explicitly authorizes the artifact and provides a destination path where the artifact will be stored.
+- The skill must not place generated artifacts in the repository root. Artifacts saved with explicit authorization must be placed in a task-approved directory path.
+
+## Locator Verification (NEW)
+
+- Recommended locators must be verified against the live page through Playwright MCP before being documented as "stable" recommendations.
+- Inferred locators must be clearly marked as "candidate" until they are validated.
+- Prefer confirmed role, label, placeholder, or stable visible text strategies, but never claim a locator is stable solely because a similar label or text appears in the UI without verification.
+- If a recommended locator does not resolve during verification, attempt alternatives in this order: placeholder, role, text, attribute (e.g., name), then CSS fallback. Document the verification result in the discovery document.
 
 ## Important Constraints
 
