@@ -2,7 +2,7 @@
 
 ## Project Timeline
 **Start Date**: 2026-05-28
-**Current Phase**: Phase 4 - Discovery
+**Current Phase**: Phase 5 - Login Test Implementation Preparation
 **Status**: In Progress
 
 ## Completed Milestones
@@ -91,3 +91,5 @@
 - Next planned activity after this PR: design and implement the first automated Login test based on the approved discovery document
 
 | 2026-05-28 | 5 | Login automation technical assessment and planning | Minimal vertical-slice structure approved; implementation deferred until coding/review agents exist | Lesson: separate framework code (src/) from tests; keep Page Objects in src/ not tests/ |
+
+| 2026-05-28 | 5 | Controlled implementation agent layer design | `automation-developer`, `code-reviewer`, and `implement-approved-ui-test` skill designed and added to repository | Lesson: code generation must be constrained by approved plans, permitted file scope, independent review and explicit validation before commit |
