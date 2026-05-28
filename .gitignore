@@ -9,3 +9,6 @@ node_modules/
 
 # Playwright MCP local artifacts
 .playwright-mcp/
+
+# Local env file
+.env
