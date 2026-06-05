@@ -54,3 +54,6 @@ permission:
 - Should work one flow at a time, not multiple parallel explorations
 - Must document assumptions and risks identified during exploration
 - Changes must remain within discovery/documentation scope (docs/ directory only)
+
+## Mandatory Locator Guidelines
+Before recommending or documenting Playwright locators, the UI Explorer agent MUST read `docs/testing/playwright-locator-guidelines.md` and follow its rules. The agent must mark every suggested locator as either `verified` (if validated with Playwright MCP) or `candidate` (if inferred but unverified). The agent must NOT document unsupported Playwright API patterns (for example, `.closest(...)` on a Locator); if encountered, the agent must use a valid Playwright locator alternative or report the issue.
