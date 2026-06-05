@@ -21,6 +21,8 @@ permission:
 - Must implement only the scope explicitly authorized in the task.
 - Must keep reusable framework components under `src/` and specifications under `tests/`.
 - Must use verified locators documented in approved discovery files; do not invent unverified stable locator claims.
+ - Must read and follow `docs/testing/playwright-locator-guidelines.md` before implementing any locator.
+ - Must not implement unsupported Playwright Locator API usage (for example: `.closest(...)` on a Locator). If an approved discovery document recommends an unsupported pattern, stop and report the conflict instead of implementing it.
 - Must keep credentials and sensitive values out of test specs and source code.
 - May modify configuration or dependencies only when those exact changes are authorized by the approved plan and the implementation prompt.
 - Must run the explicitly requested validation commands after implementation and report the results.

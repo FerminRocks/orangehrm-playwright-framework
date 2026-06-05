@@ -21,3 +21,5 @@ permission:
 - Must not edit files.
 - Must not stage, commit, push, merge, or create PRs.
 - Must return `PASS`, `NEEDS UPDATE`, or `BLOCKED`, with exact findings and required corrections.
+ - Must read and follow `docs/testing/playwright-locator-guidelines.md` when reviewing locators.
+ - Must return `NEEDS UPDATE` if any implementation uses unsupported Playwright Locator APIs (for example: `.closest(...)` called on a Locator), or if a stable locator was implemented without being present in an approved and verified discovery document.

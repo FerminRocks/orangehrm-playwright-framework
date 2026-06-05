@@ -43,6 +43,8 @@ Before using this skill, read and understand:
    - Know the expected structure for discovery documents
    - Understand locator strategy preferences
    - Understand how to document risks and assumptions
+5. **docs/testing/playwright-locator-guidelines.md** — Project locator guidelines
+   - Required: read before recommending locators; includes invalid API prevention and verification rules
 
 ## Procedure
 
@@ -75,8 +77,9 @@ Before using this skill, read and understand:
   3. `getByText()` for buttons/links with stable text
   4. CSS selector as fallback
   5. XPath only if absolutely necessary
- - For each suggested locator, verify it against the live page using Playwright MCP before documenting it as a stable recommendation (see Locator Verification rule below).
- - For candidate locators that are inferred (not verified), mark them explicitly as "candidate" until validated.
+  - For each suggested locator, verify it against the live page using Playwright MCP before documenting it as a stable recommendation (see Locator Verification rule below and `docs/testing/playwright-locator-guidelines.md`).
+  - For candidate locators that are inferred (not verified), mark them explicitly as "candidate" until validated.
+  - Do not document or recommend unsupported Playwright Locator API patterns (for example, `.closest(...)` on a Locator). Use supported field-scoped strategies such as `locator().filter({ has })` and verify them before recommending.
  - For verification, consider:
    - Is it stable across browser reloads?
    - Does it depend on dynamic content?

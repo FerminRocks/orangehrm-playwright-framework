@@ -31,6 +31,7 @@ an explicitly referenced discovery document and implementation plan.
 - the referenced `docs/discovery/<flow>.md`
 - the referenced `docs/testing/<plan>.md`
 - relevant source and configuration files (playwright.config.ts, package.json)
+ - `docs/testing/playwright-locator-guidelines.md` — Must be read and followed before implementing locators
 
 ## Procedure
 
@@ -60,3 +61,4 @@ an explicitly referenced discovery document and implementation plan.
 - Do not create Page Objects under `tests/`; reusable Page Objects belong under `src/pages/`.
 - Do not stage, commit, push, merge, or create PRs.
 - If the plan conflicts with the repository or the live validated discovery, stop and report the conflict instead of improvising.
+ - If an approved discovery document recommends a locator that violates the Playwright locator guidelines (for example, by using unsupported Playwright APIs), stop and report the conflict. Do not implement unsupported locator patterns.
